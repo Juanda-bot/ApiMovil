@@ -1,0 +1,31 @@
+###
+POST http://localhost:3000/api/clientes HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "carreño@gmail.com",
+    "password":"12345678",
+    "name":"juanC",
+    "Documento":"12345678",
+    "tipoDocumento":"C.C"
+}
+###
+GET http://localhost:3000/api/clientes HTTP/1.1
+
+###
+GET http://localhost:3000/api/clientes/65f356e3cc7a6ff04427de62 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/clientes/65f356e3cc7a6ff04427de62 HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "Ejemplo1@gmail.com",
+    "password":"12345678",
+    "name":"ejemplo2",
+    "Documento":"12345678",
+    "tipoDocumento":"C.C"
+}
+
+###
+DELETE http://localhost:3000/api/clientes/65f356e3cc7a6ff04427de62 HTTP/1.1
