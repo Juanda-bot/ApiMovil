@@ -36,6 +36,16 @@ POST http://localhost:3000/api/proyectos HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Proyecto 1",
-    "image": "imagen1jpg"
+    "clientesid":"65f49074efd4c9390395a4de",
+    "name": "Bancolombia",
+    "image": "https://centrodepracticas.antioquia.gov.co/media/k2/items/cache/0548677e6432786dd8df61eb3aaec139_XL.jpg"
 }
+###
+GET http://localhost:3000/api/proyectos HTTP/1.1
+
+###
+GET http://localhost:3000/api/proyectos/65f7c7b6c84f7386cc2db5c7 HTTP/1.1
+
+###
+DELETE http://localhost:3000/api/proyectos/65f883a34943c5772a2030d2 HTTP/1.1
+

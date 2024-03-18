@@ -1,19 +1,17 @@
 const mongooase = require("mongoose");
-
-const proyectoSchema = mongooase.Schema({
-    clientesid: {
+const observacionSchema = mongooase.Schema({
+    proyectosid: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "cliente",
+        ref: "proyecto",
         required: true,
     },
     name: {
         type: String,
         required: true,
     },
-    image: {
+    description: {
         type: String,
         required: true,
     }
 });
-
-module.exports = mongooase.model("proyecto", proyectoSchema);
+module.exports = mongooase.model("observacion", observacionSchema);
