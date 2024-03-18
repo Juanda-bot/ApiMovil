@@ -2,7 +2,7 @@ const mongooase = require("mongoose");
 
 const proyectoSchema = mongooase.Schema({
     clientesid: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongooase.Schema.Types.ObjectId,
         ref: "cliente",
         required: true,
     },

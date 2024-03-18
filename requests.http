@@ -38,14 +38,54 @@ Content-Type: application/json
 {
     "clientesid":"65f49074efd4c9390395a4de",
     "name": "Bancolombia",
-    "image": "https://centrodepracticas.antioquia.gov.co/media/k2/items/cache/0548677e6432786dd8df61eb3aaec139_XL.jpg"
+    "image": "https://i0.wp.com/interlat.co/wp-content/uploads/2020/05/ban.png?fit=512%2C512&ssl=1"
 }
 ###
 GET http://localhost:3000/api/proyectos HTTP/1.1
 
 ###
-GET http://localhost:3000/api/proyectos/65f7c7b6c84f7386cc2db5c7 HTTP/1.1
+GET http://localhost:3000/api/proyectos/65f885874943c5772a2030d5 HTTP/1.1
 
 ###
-DELETE http://localhost:3000/api/proyectos/65f883a34943c5772a2030d2 HTTP/1.1
+DELETE http://localhost:3000/api/proyectos/65f885874943c5772a2030d5 HTTP/1.1
 
+//request observaciones
+###
+POST http://localhost:3000/api/observaciones HTTP/1.1
+Content-Type: application/json
+
+{
+    "proyectosid":"65f8993ffbf9afb1151bdc1d",
+    "name": "Bancolombia",
+    "description": "Bancolombia: Líder financiero en Colombia, ofreciendo servicios bancarios integrales y soluciones innovadoras"
+}
+
+//request actividad
+###
+POST http://localhost:3000/api/actividades HTTP/1.1
+Content-Type: application/json
+
+{
+    "proyectosid": "65f8993ffbf9afb1151bdc1d",
+    "name": "Actividad 2",
+    "estadoactividad": "En progreso",
+    "fechainicioActividad": "2024-03-20T10:00:00Z",
+    "fechafinActividad": "2024-03-25T18:00:00Z",
+    "description": "Descripción de la actividad 2"
+}
+
+###
+GET http://localhost:3000/api/actividades HTTP/1.1
+
+###
+GET http://localhost:3000/api/actividades/65f8a2c498e815e6285efce2 HTTP/1.1
+
+###
+PUT http://localhost:3000/api/actividades/65f8a2c498e815e6285efce2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Actividad actualizada",
+    "estadoactividad": "Completada"
+    
+}

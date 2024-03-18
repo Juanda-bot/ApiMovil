@@ -1,7 +1,7 @@
 const mongooase = require("mongoose");
 const observacionSchema = mongooase.Schema({
     proyectosid: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongooase.Schema.Types.ObjectId,
         ref: "proyecto",
         required: true,
     },
