@@ -29,3 +29,13 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/api/clientes/65f356e3cc7a6ff04427de62 HTTP/1.1
+
+//request de proyectos
+###
+POST http://localhost:3000/api/proyectos HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Proyecto 1",
+    "image": "imagen1jpg"
+}

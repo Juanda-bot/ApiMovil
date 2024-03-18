@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const clienteRoute = require("./routes/clientes");
+const proyectoRoute = require("./routes/proyectos");
 
 //const userRoute = require("./routes/user");
 //const dateRoute = require("./routes/date");
@@ -14,6 +15,7 @@ const port = process.env.PORT || 3000;
 // middlewares
 app.use(express.json()); // Para parsear JSON en el cuerpo de las solicitudes
 app.use("/api", clienteRoute);
+app.use("/api", proyectoRoute);
 
 //app.use("/api", dateRoute);
 
