@@ -89,3 +89,179 @@ Content-Type: application/json
     "estadoactividad": "Completada"
     
 }
+
+//permisosP requests
+###
+POST http://localhost:3000/api/permisosp
+Content-Type: application/json
+
+{
+    "name": "Permiso de administrador"
+}
+
+###
+GET http://localhost:3000/api/permisosp
+
+###
+GET http://localhost:3000/api/permisosp/65f9d5b160ee84400907400b
+
+###
+PUT http://localhost:3000/api/permisosp/65f9d5b160ee84400907400b
+Content-Type: application/json
+
+{
+    "name": "Permiso del miembro"
+}
+###
+DELETE http://localhost:3000/api/permisosp/65f9d5b160ee84400907400b
+
+//request rolproyectos
+###
+POST http://localhost:3000/api/rolesp HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "rol worker proyecto"
+}
+
+###
+GET http://localhost:3000/api/rolesp HTTP/1.1
+
+###
+GET http://localhost:3000/api/rolesp/65fa5372e22cbfe365d2bbff HTTP/1.1
+
+###
+PUT http://localhost:3000/api/rolesp/65fa5372e22cbfe365d2bbff HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "rol admin proyecto"
+}
+
+###
+DELETE http://localhost:3000/api/rolesp/65fa5372e22cbfe365d2bbff HTTP/1.1
+
+//permisos usuarios requests
+###
+POST http://localhost:3000/api/permisos HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Permiso de usuarios"
+}
+
+###
+GET http://localhost:3000/api/permisos
+
+###
+GET http://localhost:3000/api/permisos/65f9d5b160ee84400907400b
+
+###
+PUT http://localhost:3000/api/permisos/65f9d5b160ee84400907400b
+Content-Type: application/json
+
+{
+    "name": "Permiso de usuario"
+}
+###
+DELETE http://localhost:3000/api/permisos/65f9d5b160ee84400907400b
+
+//////////////////
+//request roles usuarios
+###
+POST http://localhost:3000/api/roles HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "rol visitante"
+}
+
+###
+GET http://localhost:3000/api/roles HTTP/1.1
+
+###
+GET http://localhost:3000/api/roles/65fa62eedfec33ebe8e58a8f HTTP/1.1
+
+###
+PUT http://localhost:3000/api/roles/65fa62eedfec33ebe8e58a8f HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "rol admin usuario "
+}
+
+###
+DELETE http://localhost:3000/api/roles/65fa62eedfec33ebe8e58a8f HTTP/1.1
+
+//usuarios request
+###
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "name": "Thomas pino",
+    "email": "correo@example.com",
+    "password": "12345678",
+    "idrol": "65fa631fdfec33ebe8e58a95",
+    "estado": "activo"
+}
+
+###
+GET http://localhost:3000/api/usuarios
+
+###
+GET http://localhost:3000/api/usuarios/65fa6b1c0785d9ab00b8189e
+
+###
+PUT http://localhost:3000/api/usuarios/65fa6b1c0785d9ab00b8189e
+Content-Type: application/json
+
+{
+    "name": "Thomas pino montoya",
+    "email": "correo@example.com"
+    
+}
+
+###
+DELETE  http://localhost:3000/api/usuarios/65fa6b1c0785d9ab00b8189e
+
+//miembros proyectos request
+###
+POST http://localhost:3000/api/miembrosproyectos  HTTP/1.1
+Content-Type: application/json
+
+{
+    "usuariosid": "65fa6c310785d9ab00b818a5",
+    "proyectosid": "65f8993ffbf9afb1151bdc1d",
+    "idrolp": "65fa54fae22cbfe365d2bc06"
+}
+
+###
+GET http://localhost:3000/api/miembrosproyectos HTTP/1.1
+
+###
+PUT http://localhost:3000/api/miembrosproyectos/65fdc7f66dcb4bc03e5e2e23 HTTP/1.1
+Content-Type: application/json
+
+{
+    "proyectosid": "65f899cffbf9afb1151bdc21"
+}
+
+###
+DELETE http://localhost:3000/api/miembrosproyectos/65fdc7f66dcb4bc03e5e2e23 HTTP/1.1
+
+//request tareas
+###
+POST http://localhost:3000/api/tareas HTTP/1.1
+Content-Type: application/json
+
+{
+    "idactividad": "65f8a2c498e815e6285efce2",
+    "idmiembroproyecto": "65fdc9026dcb4bc03e5e2e29",
+    "nombretarea": "Crear mapa mental",
+    "estadotarea": "Pendiente",
+    "fechainicioTarea": "2024-03-22T10:00:00Z",
+    "fechafinTarea": "2024-03-24T10:00:00Z",
+    "description": "Hacer un mapa"
+}
+
