@@ -15,14 +15,14 @@ const miembroproyectoRoute = require("./routes/miembrosproyectos");
 const tareaRoute = require("./routes/tareas");
 //const userRoute = require("./routes/user");
 //const dateRoute = require("./routes/date");
-//~const orderRoute = require("./routes/order");
+//const orderRoute = require("./routes/order");
 
 // settings
 const app = express();
 const port = process.env.PORT || 3000;
 
 // middlewares
-app.use(express.json()); // Para parsear JSON en el cuerpo de las solicitudes
+app.use(express.json()); 
 app.use("/api", clienteRoute);
 app.use("/api", proyectoRoute);
 app.use("/api", observacionRoute);

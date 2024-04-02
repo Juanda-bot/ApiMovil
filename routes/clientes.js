@@ -6,10 +6,18 @@ const router = express.Router();
 
 // Crear cliente
 router.post("/clientes", async (req, res) => {
-    const Cliente = new clienteSchema(req.body);
-    Cliente.save()
-        .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+    try {
+        const existingCliente = await clienteSchema.findOne({ email: req.body.email });
+        if (existingCliente) {
+            return res.status(400).json({ message: 'El cliente ya está registrado.' });
+        }
+
+        const newCliente = new clienteSchema(req.body);
+        await newCliente.save();
+        res.json(newCliente);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 });
 
 // Listar clientes
