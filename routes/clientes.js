@@ -32,12 +32,15 @@ router.post("/clientes/login", async (req, res) => {
         if (password !== existingCliente.password) {
             return res.status(401).json({ message: 'Contraseña incorrecta.' });
         }
-        const token = jwt.sign({ userId: existingCliente._id, email: existingCliente.email }, 'secreto', { expiresIn: '1h' });
-        res.json({ cliente: existingCliente, token });
+        
+        const userId = existingCliente._id; // Obtener el ID del usuario
+        const token = jwt.sign({ userId }, 'secreto', { expiresIn: '1h' });
+        res.json({ userId, token }); // Devolver solo el ID del usuario y el token
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
+
 
 
 // Cerrar sesión
