@@ -20,13 +20,15 @@ router.get("/proyectos", async (req, res) => {
 });
 
 // Tomar un proyecto
-router.get("/proyectos/:id", async (req, res) => {
+router.get("/proyectos/:clientesid", async (req, res) => {
     const { clientesid } = req.params;
-    proyectoSchema.find({ clientesid })
-        .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+    try {
+        const data = await proyectoSchema.find({ clientesid });
+        res.json(data);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 });
-
 
 // Eliminar proyecto
 router.delete("/proyectos/:id", async (req, res) => {
