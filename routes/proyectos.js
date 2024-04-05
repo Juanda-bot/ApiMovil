@@ -20,7 +20,7 @@ router.get("/proyectos", async (req, res) => {
 });
 
 // Tomar un proyecto
-router.get("/proyectos/:clientesid", async (req, res) => {
+router.get("/proyectos/:id", async (req, res) => {
     const { clientesid } = req.params;
     proyectoSchema.find({ clientesid })
         .then((data) => res.json(data))
